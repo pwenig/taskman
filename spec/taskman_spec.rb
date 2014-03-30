@@ -8,5 +8,7 @@ feature 'managing task list' do
     visit('/')
     expect(page).to have_content "Welcome"
     click_link "Add a task"
+    fill_in "task", with: "Buy teacher gift"
+    click_on "Create task"
   end
 end
