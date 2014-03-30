@@ -10,5 +10,6 @@ feature 'managing task list' do
     click_link "Add a task"
     fill_in "task", with: "Buy teacher gift"
     click_on "Create task"
+    expect(page).to have_content "Buy teacher gift"
   end
 end

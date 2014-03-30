@@ -2,4 +2,7 @@
 <html>
 <h1>Welcome</h1>
 <h2><a href="/add">Add a task</a></h2>
+<% task.each do |task| %>
+<h3><%= task %></h3>
+  <% end %>
 </html>

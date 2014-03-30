@@ -1,8 +1,9 @@
 require 'sinatra/base'
 class App < Sinatra::Application
 
+  TASK_LIST = []
   get '/' do
-    erb :index
+    erb :index, locals: {:task => TASK_LIST}
   end
 
   get '/add' do
@@ -10,6 +11,7 @@ class App < Sinatra::Application
   end
 
   post '/add' do
+    TASK_LIST << params[:task]
     redirect ('/')
   end
 end
